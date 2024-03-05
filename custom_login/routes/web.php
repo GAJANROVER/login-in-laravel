@@ -29,7 +29,7 @@ Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('/registration', [AuthManager::class, 'registration'])->name('registration');
 Route::post('/registration', [AuthManager::class, 'registrationPost'])->name('registration.post');
 
-Route::post('/logout', [AuthManager::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', function () {
